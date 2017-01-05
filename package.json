@@ -1,0 +1,31 @@
+{
+  "name": "makendir",
+  "version": "1.0.0",
+  "description": "mkdir <dir> && cd <dir> made easy; oh, install globally as a util.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IAmAnubhavSaini/maken-dir-js.git"
+  },
+  "keywords": [
+    "mkdir",
+    "cd",
+    "make-and-enter",
+    "node",
+    "global",
+    "util"
+  ],
+  "author": "Anubhav Saini <IAmAnubhavSaini@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IAmAnubhavSaini/maken-dir-js/issues"
+  },
+  "homepage": "https://github.com/IAmAnubhavSaini/maken-dir-js#readme",
+  "xo": {
+    "space": 4
+  },
+  "dependencies": {
+    "commander": "^2.9.0",
+    "prompt": "^1.0.0"
+  }
+}
