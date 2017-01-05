@@ -1,6 +1,6 @@
 {
   "name": "makendir",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "mkdir <dir> && cd <dir> made easy; oh, install globally as a util.",
   "main": "index.js",
   "repository": {
