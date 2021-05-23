@@ -1,26 +1,26 @@
 #!/usr/bin/env node
 
-'use strict'
+const {execSync} = require('child_process');
 
-const exec = require('child_process').exec
-const prompt = require('prompt')
-
-const mkdir = 'mkdir'
-const combine = '&&'
-const enter = 'cd'
+const mkdir = 'mkdir -p';
+const combine = '&&';
+const enter = 'cd';
 
 const runMaken = dir => {
-    exec(`${mkdir} ${dir} ${combine} ${enter} ${dir}`, (err, stdout, stderr) => {
-        if (err) {
-            console.log(stderr)
-        }
-    })
+    try {
+        execSync(`${mkdir} ${dir}`);
+        execSync(`${enter} ${dir}/`);
+    } catch (e) {
+        throw new Error(e);
+    }
+};
+
+const dir = process.argv[2];
+
+if (!dir || dir.length < 1) {
+    console.info('USAGE:');
+    console.info('makendir <directory-name>\n');
+    throw  new Error('Directory name not provided');
 }
 
-prompt.start()
-prompt.get(['directory'], (err, res) => {
-    if (err) {
-        console.log(err)
-    }
-    runMaken(res.directory)
-})
+runMaken(dir);
